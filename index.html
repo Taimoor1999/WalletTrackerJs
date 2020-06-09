@@ -8,10 +8,34 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="container">
+      <div class="main">
+        <div class="signIn"></div>
+        <div class="signUp"></div>
+      </div>
+    </div>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+
+<script  src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+<script  src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
 
 
-
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBwprJt1G1Qfzl-gwR3un88g7akDw3FBrI",
+    authDomain: "wallettracker-jsproject.firebaseapp.com",
+    databaseURL: "https://wallettracker-jsproject.firebaseio.com",
+    projectId: "wallettracker-jsproject",
+    storageBucket: "wallettracker-jsproject.appspot.com",
+    messagingSenderId: "119367778635",
+    appId: "1:119367778635:web:e783707bbe6f16e1c8a8ce"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
 
 
 

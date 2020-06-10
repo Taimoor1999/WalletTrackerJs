@@ -3,6 +3,12 @@
  padding: 0px;
  border: 0;   
 }
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 .container{
     display: grid;
     grid-template-rows: 100vh;
@@ -11,7 +17,8 @@
 }
 .main{
     display: grid;
-    grid-template-rows: 100fr;
+    grid-template-rows: 100vh;
+    
     grid-template-columns: 50fr 50fr;
     grid-template-areas: 'signIn signUp';
 
@@ -19,8 +26,21 @@
 .signIn{
     grid-area: signIn;
     background: lightseagreen;
+    justify-content: flex-start;
+
 }
 .signUp{
     grid-area: signUp;
     background: khaki;
+    justify-content: flex-start;
+
+}
+@media screen and (max-width: 600px){
+    .SignInForm{
+        flex-flow: column;
+    }
+    .SignUpForm{
+        flex-flow: column;
+    }
+    
 }

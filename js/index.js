@@ -11,10 +11,29 @@ var fetchSignUpPassword = document.querySelector('.SignUp_Password');
 var fetchSignUpName = document.querySelector('.SignUp_Name');
 var fetchSignUpForm  = document.querySelector('.SignUpForm');
 var fetchSignInForm  = document.querySelector('.SignInForm');
+var fetchGoogleButton = document.querySelector('.GoogleButton');
 
+fetchGoogleButton.addEventListener('click', (e) => GoogleSignIn(e));
 fetchSignInForm.addEventListener('submit' ,  (e) => SignInFormSubmisson(e))
-
 fetchSignUpForm.addEventListener('submit' ,  (e) => SignUpFormSubmisson(e));
+
+var GoogleSignIn=  async (e) => {
+    e.preventDefault();
+    
+try{    
+var Googleprovider = new firebase.auth.GoogleAuthProvider();
+var GoogleSignedInUser = await firebase.auth().signInWithPopup(Googleprovider);
+console.log(GoogleSignedInUser);
+
+}
+catch(error)
+{
+console.log(error);
+console.log('failed to sign in with google');
+}
+
+}
+
 
 var SignUpFormSubmisson = async (e) => {
  e.preventDefault();
@@ -57,7 +76,7 @@ var SignInFormSubmisson = async (e) => {
         console.log(signedIn.user.uid);
         var getUserInfo = await firestore.collection('user').doc(signedIn.user.uid).get();
         console.log(getUserInfo.data());
-    
+        console.log('data read');
     }
 
    }
